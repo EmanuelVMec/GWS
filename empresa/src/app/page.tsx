@@ -89,9 +89,9 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+  <div className="bg-[#0A0A0A]">
+  <header className="absolute inset-x-0 top-0 z-50">
+  <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -129,21 +129,21 @@ export default function Home() {
                 );
               }
               return (
-                <Link key={item.name} href={item.href ?? "#"} className="text-sm/6 font-semibold text-white">
+                <Link key={item.name} href={item.href ?? "#"} className="text-sm/6 font-semibold text-[#2A8CFF] hover:text-[#1BC6D9] transition-colors">
                   {item.name}
                 </Link>
               );
             })}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm/6 font-semibold text-white">
+            <a href="#" className="text-sm/6 font-semibold text-[#2A8CFF] hover:text-[#1BC6D9] transition-colors">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#0A0A0A] p-6 sm:max-w-sm sm:ring-1 sm:ring-[#B5B5B5]/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
@@ -205,7 +205,7 @@ export default function Home() {
         </Dialog>
       </header>
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+  <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -218,36 +218,135 @@ export default function Home() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-              Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-indigo-400">
-                <span aria-hidden="true" className="absolute inset-0" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
+  <div className="w-full py-16 sm:py-20 lg:py-24">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-8">
+              <img
+                src="/G.png"
+                alt="Logo GWS"
+                className="h-48 w-48 sm:h-64 sm:w-64 object-contain"
+              />
             </div>
-          </div>
-          <div className="text-center">
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-              GWS
+            <h1 className="text-5xl font-extrabold tracking-tight text-balance text-[#2A8CFF] sm:text-7xl drop-shadow-lg mb-4 animate-fade-in flex items-center justify-center gap-2">
+              <span className="text-6xl"></span> GWS
             </h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+            <p className="mt-4 text-lg font-medium text-pretty text-[#B5B5B5] sm:text-xl/8 max-w-2xl mx-auto animate-fade-in">
+              Impulsamos tu empresa con tecnología, innovación y soporte de calidad.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-6 mb-8 max-w-3xl mx-auto animate-fade-in text-[#0A0A0A] text-base bg-white rounded-xl p-4 border border-[#B5B5B5]">
+              <span className="font-bold text-[#2A8CFF]">Significado del nombre:</span> Grain Wave Studios representa la unión de lo pequeño y lo grande: <br/>
+              <span className="font-semibold text-[#1BC6D9]">Grain (grano)</span> simboliza el detalle, la precisión y el inicio de una gran idea.<br/>
+              <span className="font-semibold text-[#2A8CFF]">Wave (ola)</span> simboliza la innovación, la fuerza del cambio y la expansión digital.<br/>
+              <span className="font-semibold text-[#0A0A0A]">Studios</span> refleja creatividad, tecnología y trabajo en equipo.<br/>
+              <br/>
+              En conjunto, GWS es un estudio tecnológico que transforma ideas en soluciones digitales sólidas, escalables y modernas.
+            </div>
+            <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in">
               <a
-                href="#"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                href="/servicios"
+                className="rounded-md bg-[#2A8CFF] px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-[#1BC6D9] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2A8CFF] transition-all duration-200"
               >
-                Get started
+                Ver servicios
               </a>
-              <a href="#" className="text-sm/6 font-semibold text-white">
-                Learn more <span aria-hidden="true">→</span>
+              <a href="/soporte" className="text-base font-semibold text-[#1BC6D9] hover:text-[#2A8CFF] transition-all duration-200">
+                Soporte técnico <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
+
+          {/* Sección de misión, visión y valores rediseñada */}
+          <section className="w-full mt-8 mb-8 px-4 animate-fade-in">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 max-w-5xl mx-auto mb-10 justify-center items-stretch">
+              {/* Misión */}
+              <div className="flex-1 bg-[#1BC6D9]/80 rounded-2xl p-6 flex flex-col items-center shadow-xl border border-[#2A8CFF] min-w-[220px] max-w-xs mx-auto">
+                <span className="text-5xl mb-3">🚀</span>
+                <h3 className="text-lg font-bold text-[#0A0A0A] mb-2 text-center">Misión</h3>
+                <p className="text-[#0A0A0A] text-sm text-center">Soluciones digitales innovadoras y confiables en web, apps, automatización y soporte, ayudando a crecer en un mundo conectado.</p>
+              </div>
+              {/* Visión */}
+              <div className="flex-1 bg-[#1BC6D9]/80 rounded-2xl p-6 flex flex-col items-center shadow-xl border border-[#2A8CFF] min-w-[220px] max-w-xs mx-auto">
+                <span className="text-5xl mb-3">🌍</span>
+                <h3 className="text-lg font-bold text-[#0A0A0A] mb-2 text-center">Visión</h3>
+                <p className="text-[#0A0A0A] text-sm text-center">Ser referente tecnológico en Latinoamérica y el mundo, reconocido por innovación, calidad y confianza en cada proyecto.</p>
+              </div>
+              {/* Valores */}
+              <div className="flex-1 bg-[#1BC6D9]/80 rounded-2xl p-6 flex flex-col items-center shadow-xl border border-[#2A8CFF] min-w-[220px] max-w-xs mx-auto">
+                <span className="text-5xl mb-3">⭐</span>
+                <h3 className="text-lg font-bold text-[#0A0A0A] mb-2 text-center">Valores</h3>
+                <ul className="text-[#0A0A0A] text-sm text-center space-y-1">
+                  <li><span className="font-semibold text-[#0A0A0A]">Innovación</span></li>
+                  <li><span className="font-semibold text-[#0A0A0A]">Calidad</span></li>
+                  <li><span className="font-semibold text-[#0A0A0A]">Compromiso</span></li>
+                  <li><span className="font-semibold text-[#0A0A0A]">Confianza</span></li>
+                  <li><span className="font-semibold text-[#0A0A0A]">Eficiencia</span></li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#B5B5B5] max-w-3xl mx-auto mb-8">
+              <h3 className="text-2xl font-bold text-[#2A8CFF] mb-2 flex items-center gap-2 justify-center">📌 Descripción corporativa</h3>
+              <p className="text-[#B5B5B5] text-base mb-2 text-center">GWS – Grain Wave Studios es una empresa de tecnología que ofrece:</p>
+              <ul className="text-[#B5B5B5] text-sm list-disc list-inside space-y-1 mb-2 mx-auto max-w-md">
+                <li><span className="font-semibold text-[#2A8CFF]">Páginas Web & E-commerce:</span> sitios modernos y tiendas online.</li>
+                <li><span className="font-semibold text-[#2A8CFF]">Apps Móviles:</span> soluciones para Android y iOS.</li>
+                <li><span className="font-semibold text-[#2A8CFF]">Chatbots & Automatización:</span> atención al cliente inteligente y procesos optimizados.</li>
+                <li><span className="font-semibold text-[#2A8CFF]">Email Marketing:</span> campañas efectivas y gestión profesional de dominios.</li>
+                <li><span className="font-semibold text-[#2A8CFF]">Mantenimiento & Reparación:</span> cuidado preventivo y correctivo de equipos y servidores.</li>
+                <li><span className="font-semibold text-[#2A8CFF]">Soporte & Actualización:</span> asistencia técnica, actualizaciones de software y hardware.</li>
+              </ul>
+              <p className="text-[#B5B5B5] text-base mt-2 text-center">Con GWS, cada idea se convierte en una ola de innovación que impulsa el éxito digital. <span className="text-2xl">🌊💻📱</span></p>
+            </div>
+          </section>
+          {/* Sección de servicios (original) */}
+          <section className="w-full mt-20 mb-10 px-2 sm:px-8 lg:px-32 xl:px-64">
+            <h2 className="text-3xl font-bold text-center text-[#2A8CFF] mb-8 animate-fade-in">Nuestros Servicios</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 xl:gap-10 justify-items-center">
+              <div className="bg-white rounded-2xl min-h-[180px] min-w-[180px] max-w-xs p-6 flex flex-col items-center justify-center shadow-xl hover:scale-105 transition-transform duration-300 animate-fade-in border border-[#B5B5B5]">
+                <span className="text-4xl mb-3 text-[#1BC6D9]">🌐</span>
+                <h3 className="text-lg font-bold text-[#2A8CFF] mb-2 text-center">Páginas Web & E-commerce</h3>
+                <p className="text-[#0A0A0A] text-center text-sm">Desarrollo de sitios web modernos, tiendas online y presencia digital profesional.</p>
+              </div>
+              <div className="bg-white rounded-2xl min-h-[180px] min-w-[180px] max-w-xs p-6 flex flex-col items-center justify-center shadow-xl hover:scale-105 transition-transform duration-300 animate-fade-in delay-100 border border-[#B5B5B5]">
+                <span className="text-4xl mb-3 text-[#1BC6D9]">📱</span>
+                <h3 className="text-lg font-bold text-[#2A8CFF] mb-2 text-center">Apps Móviles</h3>
+                <p className="text-[#0A0A0A] text-center text-sm">Aplicaciones móviles a medida para Android y iOS, funcionales y atractivas.</p>
+              </div>
+              <div className="bg-white rounded-2xl min-h-[180px] min-w-[180px] max-w-xs p-6 flex flex-col items-center justify-center shadow-xl hover:scale-105 transition-transform duration-300 animate-fade-in delay-200 border border-[#B5B5B5]">
+                <span className="text-4xl mb-3 text-[#1BC6D9]">🤖</span>
+                <h3 className="text-lg font-bold text-[#2A8CFF] mb-2 text-center">Chatbots & Automatización</h3>
+                <p className="text-[#0A0A0A] text-center text-sm">Automatiza tu atención al cliente y procesos con bots inteligentes.</p>
+              </div>
+              <div className="bg-white rounded-2xl min-h-[180px] min-w-[180px] max-w-xs p-6 flex flex-col items-center justify-center shadow-xl hover:scale-105 transition-transform duration-300 animate-fade-in delay-300 border border-[#B5B5B5]">
+                <span className="text-4xl mb-3 text-[#1BC6D9]">📧</span>
+                <h3 className="text-lg font-bold text-[#2A8CFF] mb-2 text-center">Email Marketing</h3>
+                <p className="text-[#0A0A0A] text-center text-sm">Campañas de emails masivos y gestión de dominios para tu marca.</p>
+              </div>
+              <div className="bg-white rounded-2xl min-h-[180px] min-w-[180px] max-w-xs p-6 flex flex-col items-center justify-center shadow-xl hover:scale-105 transition-transform duration-300 animate-fade-in delay-400 border border-[#B5B5B5]">
+                <span className="text-4xl mb-3 text-[#1BC6D9]">🛠️</span>
+                <h3 className="text-lg font-bold text-[#2A8CFF] mb-2 text-center">Mantenimiento & Reparación</h3>
+                <p className="text-[#0A0A0A] text-center text-sm">Mantenimiento preventivo, correctivo y optimización de equipos y servidores.</p>
+              </div>
+              <div className="bg-white rounded-2xl min-h-[180px] min-w-[180px] max-w-xs p-6 flex flex-col items-center justify-center shadow-xl hover:scale-105 transition-transform duration-300 animate-fade-in delay-500 border border-[#B5B5B5]">
+                <span className="text-4xl mb-3 text-[#1BC6D9]">💻</span>
+                <h3 className="text-lg font-bold text-[#2A8CFF] mb-2 text-center">Soporte & Actualización</h3>
+                <p className="text-[#0A0A0A] text-center text-sm">Soporte remoto/en sitio, actualización de hardware y software.</p>
+              </div>
+            </div>
+          </section>
+
+          <style jsx>{`
+            @keyframes fade-in {
+              from { opacity: 0; transform: translateY(20px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+              animation: fade-in 0.8s cubic-bezier(0.4,0,0.2,1) both;
+            }
+            .delay-100 { animation-delay: 0.1s; }
+            .delay-200 { animation-delay: 0.2s; }
+            .delay-300 { animation-delay: 0.3s; }
+            .delay-400 { animation-delay: 0.4s; }
+            .delay-500 { animation-delay: 0.5s; }
+          `}</style>
         </div>
         <div
           aria-hidden="true"
