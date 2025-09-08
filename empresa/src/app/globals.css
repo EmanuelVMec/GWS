@@ -1,0 +1,122 @@
+@keyframes metal-shine {
+  0% {
+    opacity: 0.2;
+    background: linear-gradient(120deg, transparent 40%, #b3cfff 50%, transparent 60%);
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  50% {
+    opacity: 0.7;
+    background: linear-gradient(120deg, transparent 40%, #60a5fa 50%, transparent 60%);
+    transform: translateX(0%) skewX(-20deg);
+  }
+  100% {
+    opacity: 0.2;
+    background: linear-gradient(120deg, transparent 40%, #b3cfff 50%, transparent 60%);
+    transform: translateX(100%) skewX(-20deg);
+  }
+}
+
+.animate-metal-shine {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 1rem;
+  pointer-events: none;
+  animation: metal-shine 2.5s linear infinite;
+  mix-blend-mode: lighten;
+}
+.@keyframes metal-logo {
+  0% {
+    filter: drop-shadow(0 0 0px #b3cfff) brightness(1.1);
+    transform: scale(0.8) rotate(-10deg);
+  }
+  50% {
+    filter: drop-shadow(0 0 24px #60a5fa) brightness(1.5);
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px #b3cfff) brightness(1.1);
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-metal-logo {
+  animation: metal-logo 2.5s cubic-bezier(.4,0,.2,1) infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease;
+}
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 16px #60a5fa, 0 0 32px #60a5fa;
+  }
+  50% {
+    box-shadow: 0 0 32px #3b82f6, 0 0 64px #3b82f6;
+  }
+}
+
+.animate-glow {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes luminous {
+  0%, 100% {
+    text-shadow: 0 0 16px #60a5fa, 0 0 32px #60a5fa;
+    color: #60a5fa;
+  }
+  50% {
+    text-shadow: 0 0 32px #3b82f6, 0 0 64px #3b82f6;
+    color: #3b82f6;
+  }
+}
+
+/* Menos luz y sombra para los números metalizados */
+.animate-luminous {
+  animation: luminous 1.5s infinite alternate;
+  background: linear-gradient(90deg, #b3cfff 0%, #60a5fa 40%, #3b82f6 60%, #b3cfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+}
+
+.metal-separator {
+  background: linear-gradient(90deg, #b3cfff 0%, #60a5fa 50%, #b3cfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px #b3cfff);
+}
