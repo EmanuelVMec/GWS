@@ -4,11 +4,20 @@ import React, { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { 
+  GlobeAltIcon, 
+  DevicePhoneMobileIcon, 
+  ChatBubbleLeftRightIcon, 
+  ShareIcon, 
+  ServerIcon,
+  EnvelopeIcon,
+  PhoneIcon
+} from "@heroicons/react/20/solid";
 import Link from "next/link";
 
 const navigation = [
   { name: "Inicio", href: "/" },
-  { name: "Servicios", href: "/servicios" },
+  { name: "Servicios" },
   { name: "Equipo", href: "/equipo" },
   { name: "Soporte", href: "/soporte", dropdown: true },
   { name: "Trabaja con Nosotros", href: "/trabaja" },
@@ -16,25 +25,39 @@ const navigation = [
 
 type FlyoutLinkProps = {
   children: React.ReactNode;
-  href: string;
+  href?: string;
   FlyoutContent: React.ComponentType;
 };
 const FlyoutLink = ({ children, href, FlyoutContent }: FlyoutLinkProps) => {
   const [open, setOpen] = useState(false);
   const showFlyout = FlyoutContent && open;
+  
+  // Si no hay href, es solo un dropdown sin navegación
+  const isDropdownOnly = !href;
+  
   return (
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
       className="relative w-fit h-fit"
     >
-      <a href={href} className="relative text-white text-base font-semibold transition-all duration-300 hover:text-[#60a5fa] hover:drop-shadow-[0_0_8px_#60a5fa] hover:scale-105 text-glow-hover">
-        {children}
-        <span
-          style={{ transform: showFlyout ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
-        />
-      </a>
+      {isDropdownOnly ? (
+        <div className="relative text-white text-base font-semibold transition-all duration-300 hover:text-[#60a5fa] hover:drop-shadow-[0_0_8px_#60a5fa] hover:scale-105 text-glow-hover cursor-pointer">
+          {children}
+          <span
+            style={{ transform: showFlyout ? "scaleX(1)" : "scaleX(0)" }}
+            className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
+          />
+        </div>
+      ) : (
+        <a href={href} className="relative text-white text-base font-semibold transition-all duration-300 hover:text-[#60a5fa] hover:drop-shadow-[0_0_8px_#60a5fa] hover:scale-105 text-glow-hover">
+          {children}
+          <span
+            style={{ transform: showFlyout ? "scaleX(1)" : "scaleX(0)" }}
+            className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
+          />
+        </a>
+      )}
       <AnimatePresence>
         {showFlyout && (
           <motion.div
@@ -59,11 +82,26 @@ const ServiciosContent = () => (
   <div className="w-64 bg-white p-6 shadow-xl">
     <div className="mb-3 space-y-3">
       <h3 className="font-semibold">Servicios</h3>
-      <a href="#" className="block text-sm hover:underline">Paginas Web</a>
-      <a href="#" className="block text-sm hover:underline">Aplicaciones móviles</a>
-      <a href="#" className="block text-sm hover:underline">ChatBots</a>
-      <a href="#" className="block text-sm hover:underline">Gestion de Redes</a>
-      <a href="#" className="block text-sm hover:underline">Hosting</a>
+      <Link href="/Paginasweb" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <GlobeAltIcon className="w-4 h-4 text-blue-500" />
+        Desarrollo de Paginas Web
+      </Link>
+      <Link href="/Movil" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <DevicePhoneMobileIcon className="w-4 h-4 text-green-500" />
+        Desarrollo de Aplicaciones móviles
+      </Link>
+      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <ChatBubbleLeftRightIcon className="w-4 h-4 text-purple-500" />
+        ChatBots
+      </a>
+      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <ShareIcon className="w-4 h-4 text-pink-500" />
+        Marketing Digital
+      </a>
+      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <ServerIcon className="w-4 h-4 text-orange-500" />
+        Hosting
+      </a>
     </div>
     <button className="w-full rounded-lg border-2 border-neutral-950 px-4 py-2 font-semibold transition-colors hover:bg-neutral-950 hover:text-white">
       Contactar
@@ -75,8 +113,14 @@ const SoporteContent = () => (
   <div className="w-64 bg-white p-6 shadow-xl">
     <div className="mb-3 space-y-3">
       <h3 className="font-semibold">Soporte</h3>
-      <a href="#" className="block text-sm hover:underline">Contacto</a>
-      <a href="#" className="block text-sm hover:underline">Email</a>
+      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <PhoneIcon className="w-4 h-4 text-blue-500" />
+        Contacto
+      </a>
+      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        <EnvelopeIcon className="w-4 h-4 text-red-500" />
+        Email
+      </a>
     </div>
     <button className="w-full rounded-lg border-2 border-neutral-950 px-4 py-2 font-semibold transition-colors hover:bg-neutral-950 hover:text-white">
       Ayuda
@@ -95,7 +139,7 @@ export default function Header() {
             <span className="sr-only">Your Company</span>
             <img
               alt="Logo"
-              src="/LOGOGWS.png"
+              src="/GWSICO.png"
               className="h-17 w-auto"
             />
           </a>
@@ -114,7 +158,7 @@ export default function Header() {
           {navigation.map((item) => {
             if (item.name === "Servicios") {
               return (
-                <FlyoutLink key={item.name} href={item.href} FlyoutContent={ServiciosContent}>
+                <FlyoutLink key={item.name} FlyoutContent={ServiciosContent}>
                   Servicios
                 </FlyoutLink>
               );
@@ -159,7 +203,7 @@ export default function Header() {
                 {navigation.map((item) => {
                   if (item.name === "Servicios") {
                     return (
-                      <FlyoutLink key={item.name} href={item.href} FlyoutContent={ServiciosContent}>
+                      <FlyoutLink key={item.name} FlyoutContent={ServiciosContent}>
                         Servicios
                       </FlyoutLink>
                     );

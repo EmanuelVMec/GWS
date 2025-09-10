@@ -18,9 +18,9 @@ export default function Footer() {
           <div>
             <div className="flex justify-center text-[#2A8CFF] sm:justify-start">
               <img
-                src="/logoGWS.png"
+                src="/GWSICO.png"
                 alt="Logo GWS"
-                className="h-12 w-auto object-contain"
+                className="h-40 w-auto object-contain"
               />
             </div>
 

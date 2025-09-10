@@ -13,21 +13,28 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Tony Wayne",
+    name: "Henry Soledispa",
     role: "Developer",
     description: "Especialista en desarrollo full-stack con experiencia en React, Node.js y tecnologías modernas. Apasionado por crear soluciones innovadoras y escalables.",
     imageUrl: "https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
   },
   {
     id: 2,
-    name: "Maria González",
+    name: "Joshua Vinces",
     role: "UI/UX Designer",
     description: "Diseñadora creativa especializada en experiencias de usuario intuitivas y interfaces modernas que conectan con el usuario final.",
     imageUrl: "https://images.unsplash.com/photo-1494790108755-2616c03c4c24?ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80"
   },
   {
     id: 3,
-    name: "Carlos Ruiz",
+    name: "Angel Navarrete",
+    role: "Project Manager",
+    description: "Líder de proyectos con amplia experiencia en metodologías ágiles y gestión de equipos multidisciplinarios orientados a resultados.",
+    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80"
+  },
+  {
+    id: 4,
+    name: "Angel Navarrete",
     role: "Project Manager",
     description: "Líder de proyectos con amplia experiencia en metodologías ágiles y gestión de equipos multidisciplinarios orientados a resultados.",
     imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80"
