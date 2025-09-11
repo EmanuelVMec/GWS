@@ -1,7 +1,43 @@
+'use client';
+
 import React from 'react';
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 
 export default function Contacto() {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      // Usar FormData directamente (sin JSON)
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxDUa-e87AJkIzRCT_aPMGFnH4XRSNyDEFyAvLS5R8fg2w7EueW-CAH8qZ9aSkVLEUH/exec', {
+        method: 'POST',
+        body: formData, // Enviar FormData directamente
+      });
+
+      // Si llegamos aquí sin error, asumimos éxito
+      setSubmitStatus('success');
+      
+      // Resetear formulario de forma segura
+      const form = e.currentTarget;
+      if (form && typeof form.reset === 'function') {
+        form.reset();
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
+  };
+
   return (
     <div className="bg-gray-900 py-24 sm:py-32 relative overflow-hidden">
       {/* Fondo animado mejorado - ahora también arriba */}
@@ -166,19 +202,7 @@ export default function Contacto() {
 
         {/* Header del formulario con imágenes llamativas */}
         <div className="mx-auto max-w-4xl text-center mb-16">
-          <div className="flex justify-center items-center mb-6 animate-fadeInUp">
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=100&h=100&fit=crop&crop=face" 
-                alt="Rocket" 
-                className="w-20 h-20 rounded-full border-4 border-blue-500 shadow-lg animate-bounce"
-                style={{animationDelay: '0.5s'}}
-              />
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-ping">
-                <span className="text-white text-xs">🚀</span>
-              </div>
-            </div>
-          </div>
+          
           
           {/* Título mejorado con efectos de diseño */}
           <div className="relative mb-8">
@@ -226,7 +250,7 @@ export default function Contacto() {
         {/* Formulario mejorado */}
         <div className="mx-auto max-w-4xl">
           <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-700/50 animate-fadeInUp" style={{animationDelay: '0.6s'}}>
-            <form action="#" method="POST" className="space-y-8">
+            <form onSubmit={handleSubmit} method="POST" className="space-y-8">
               {/* Información Personal */}
               <div className="border-b border-gray-700 pb-8">
                 <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
@@ -283,7 +307,7 @@ export default function Contacto() {
                         <select
                           id="country"
                           name="country"
-                          className="col-start-1 row-start-1 w-full appearance-none rounded-xl bg-transparent py-3 pr-8 pl-4 text-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
+                          className="col-start-1 row-start-1 w-full appearance-none rounded-xl bg-gray-800/50 px-3 py-2 text-white text-sm font-medium focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 border border-gray-600/30 shadow-lg backdrop-blur-md hover:bg-gray-700/50 transition-all duration-300"
                         >
                           <option value="+1">🇺🇸 +1 (USA)</option>
                           <option value="+34">🇪🇸 +34 (España)</option>
@@ -306,13 +330,18 @@ export default function Contacto() {
                           <option value="+595">🇵🇾 +595 (Paraguay)</option>
                           <option value="+591">🇧🇴 +591 (Bolivia)</option>
                         </select>
-                        <ChevronDownIcon className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text--400" />
+                        <ChevronDownIcon className="pointer-events-none col-start-1 row-start-1 mr-2 size-4 self-center justify-self-end text-gray-600" />
                       </div>
                       <input
                         id="phone-number"
                         name="phone-number"
-                        type="text"
+                        type="tel"
                         placeholder="123-456-7890"
+                        pattern="[0-9\-\s\(\)\+]*"
+                        onInput={(e) => {
+                          const target = e.target as HTMLInputElement;
+                          target.value = target.value.replace(/[^0-9\-\s\(\)]/g, '');
+                        }}
                         className="block min-w-0 grow bg-transparent py-3 pr-4 pl-2 text-white placeholder:text-gray-400 focus:outline-none"
                       />
                     </div>
@@ -349,7 +378,7 @@ export default function Contacto() {
                       id="project-type"
                       name="project-type"
                       required
-                      className="block w-full rounded-xl bg-white/5 px-4 py-3 text-white outline-1 -outline-offset-1 outline-white/10 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 transition-all duration-300 hover:bg-white/10 border border-gray-600/30 focus:border-blue-500/50"
+                      className="block w-full rounded-xl bg-gray-800/50 px-4 py-3 text-white border border-gray-600/30 shadow-lg backdrop-blur-md focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 transition-all duration-300 hover:bg-gray-700/50"
                     >
                       <option value="">Selecciona el tipo de proyecto</option>
                       <option value="web">Página Web Corporativa</option>
@@ -372,7 +401,7 @@ export default function Contacto() {
                     <select
                       id="budget"
                       name="budget"
-                      className="block w-full rounded-xl bg-white/5 px-4 py-3 text-white outline-1 -outline-offset-1 outline-white/10 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 transition-all duration-300 hover:bg-white/10 border border-gray-600/30 focus:border-blue-500/50"
+                      className="block w-full rounded-xl bg-gray-800/50 px-4 py-3 text-white border border-gray-600/30 shadow-lg backdrop-blur-md focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 transition-all duration-300 hover:bg-gray-700/50"
                     >
                       <option value="">Selecciona tu presupuesto</option>
                       <option value="500-1500">$500 - $1,500 USD</option>
@@ -391,7 +420,7 @@ export default function Contacto() {
                   <select
                     id="timeline"
                     name="timeline"
-                    className="block w-full rounded-xl bg-white/5 px-4 py-3 text-white outline-1 -outline-offset-1 outline-white/10 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 transition-all duration-300 hover:bg-white/10 border border-gray-600/30 focus:border-blue-500/50"
+                    className="block w-full rounded-xl bg-gray-800/50 px-4 py-3 text-white border border-gray-600/30 shadow-lg backdrop-blur-md focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 transition-all duration-300 hover:bg-gray-700/50"
                   >
                     <option value="">Selecciona el tiempo</option>
                     <option value="urgente">¡Es urgente! (1-2 semanas)</option>
@@ -457,16 +486,60 @@ export default function Contacto() {
               <div className="text-center pt-8">
                 <button
                   type="submit"
-                  className="group relative inline-flex items-center justify-center px-12 py-4 text-lg font-bold text-white bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl shadow-2xl hover:shadow-blue-500/25 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 animate-pulse"
+                  disabled={isSubmitting}
+                  className={`group relative inline-flex items-center justify-center px-12 py-4 text-lg font-bold text-white rounded-2xl shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
+                    isSubmitting 
+                      ? 'bg-gray-600 cursor-not-allowed' 
+                      : submitStatus === 'success'
+                      ? 'bg-green-600 hover:bg-green-700'
+                      : submitStatus === 'error'
+                      ? 'bg-red-600 hover:bg-red-700'
+                      : 'bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:shadow-blue-500/25 animate-pulse'
+                  }`}
                 >
                   <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
                   <span className="relative flex items-center">
-                    🚀 Solicitar Cotización GRATUITA
-                    <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Enviando...
+                      </>
+                    ) : submitStatus === 'success' ? (
+                      <>
+                        ✅ ¡Enviado correctamente!
+                      </>
+                    ) : submitStatus === 'error' ? (
+                      <>
+                        ❌ Error al enviar
+                      </>
+                    ) : (
+                      <>
+                        🚀 Solicitar Cotización GRATUITA
+                        <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </>
+                    )}
                   </span>
                 </button>
+                
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-xl">
+                    <p className="text-green-400 font-semibold">¡Gracias! Tu solicitud fue enviada correctamente.</p>
+                    <p className="text-green-300 text-sm">Te contactaremos en menos de 24 horas.</p>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-xl">
+                    <p className="text-red-400 font-semibold">Error al enviar el formulario.</p>
+                    <p className="text-red-300 text-sm">Por favor, inténtalo de nuevo o contáctanos directamente.</p>
+                  </div>
+                )}
+                
                 <p className="mt-4 text-sm text-gray-400">
                   ⚡ Respuesta garantizada en menos de 24 horas<br />
                   💯 Sin compromiso • 100% Confidencial
