@@ -252,7 +252,7 @@ export default function Footer() {
                     </svg>
 
                     <span className="flex-1 text-[#B5B5B5] hover:text-[#1BC6D9] transition duration-300">
-                      contact@gws.com
+                      grainwavestudios@gmail.com
                     </span>
                   </a>
                 </li>
