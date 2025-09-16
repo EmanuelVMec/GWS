@@ -111,7 +111,7 @@ export default function Home() {
                   tu emprendimiento con tecnología, innovación y soporte de calidad
                 </h2>
                 <p className="text-xl text-[#B5B5B5] md:text-2xl mb-10 leading-relaxed scroll-animate">
-                  GWS - Grain Wave Studios es donde las ideas se transforman en soluciones digitales innovadoras
+                  Grain Wave Studios es donde las ideas se transforman en soluciones digitales innovadoras
                 </p>
                 
                 {/* Cuadros de servicios principales */}

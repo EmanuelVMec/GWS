@@ -19,7 +19,7 @@ const navigation = [
   { name: "Inicio", href: "/" },
   { name: "Servicios" },
   { name: "Equipo", href: "/equipo" },
-  { name: "Soporte", href: "/soporte", dropdown: true },
+  { name: "Soporte"},
   { name: "Trabaja con Nosotros", href: "/trabaja" },
 ];
 
@@ -90,21 +90,23 @@ const ServiciosContent = () => (
         <DevicePhoneMobileIcon className="w-4 h-4 text-green-500" />
         Desarrollo de Aplicaciones móviles
       </Link>
-      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+      <Link href="/ChatBot" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
         <ChatBubbleLeftRightIcon className="w-4 h-4 text-purple-500" />
         ChatBots
-      </a>
-      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+      </Link>
+      <Link href="/MarketingD" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
         <ShareIcon className="w-4 h-4 text-pink-500" />
         Marketing Digital
-      </a>
-      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+      </Link>
+      <Link href="/Hosteo" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
         <ServerIcon className="w-4 h-4 text-orange-500" />
         Hosting
-      </a>
+      </Link>
     </div>
     <button className="w-full rounded-lg border-2 border-neutral-950 px-4 py-2 font-semibold transition-colors hover:bg-neutral-950 hover:text-white">
-      Contactar
+      <Link href="/soporte" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+        Contactar
+      </Link>
     </button>
   </div>
 );
@@ -113,18 +115,16 @@ const SoporteContent = () => (
   <div className="w-64 bg-white p-6 shadow-xl">
     <div className="mb-3 space-y-3">
       <h3 className="font-semibold">Soporte</h3>
-      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+      <a href="/soporte" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
         <PhoneIcon className="w-4 h-4 text-blue-500" />
-        Contacto
+        Contáctanos
       </a>
-      <a href="#" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
+      <Link href="/FAQS" className="flex items-center gap-2 text-sm hover:underline hover:text-blue-600 transition-colors">
         <EnvelopeIcon className="w-4 h-4 text-red-500" />
-        Email
-      </a>
+        FAQ
+      </Link>
     </div>
-    <button className="w-full rounded-lg border-2 border-neutral-950 px-4 py-2 font-semibold transition-colors hover:bg-neutral-950 hover:text-white">
-      Ayuda
-    </button>
+    
   </div>
 );
 
@@ -179,7 +179,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-base font-semibold text-[#2A8CFF] hover:text-[#1BC6D9] transition-all duration-300 hover:drop-shadow-[0_0_8px_#60a5fa] hover:scale-105 text-glow-hover">
-            Log in <span aria-hidden="true">&rarr;</span>
+             <span aria-hidden="true"></span>
           </a>
         </div>
       </nav>
