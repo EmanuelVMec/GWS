@@ -1,25 +1,25 @@
 "use client";
 
-import { CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
+import { CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon } from '@heroicons/react/20/solid';
 
 const features = [
   {
-    name: 'Diseño Responsivo',
+    name: 'E-commerce Personalizado',
     description:
-      'Páginas web que se adaptan perfectamente a cualquier dispositivo: móviles, tablets y computadoras de escritorio.',
+      'Creamos tiendas online adaptadas a tus necesidades, con diseño único y funcionalidades avanzadas.',
     icon: DevicePhoneMobileIcon,
   },
   {
-    name: 'Código Optimizado',
-    description: 'Desarrollo con las mejores prácticas, código limpio y optimizado para velocidad y SEO.',
+    name: 'Optimización SEO',
+    description: 'Tiendas optimizadas para motores de búsqueda, asegurando mayor visibilidad y tráfico.',
     icon: CodeBracketIcon,
   },
   {
-    name: 'Lanzamiento Rápido',
-    description: 'Desde la idea hasta el lanzamiento, garantizamos tiempos de entrega rápidos sin comprometer la calidad.',
+    name: 'Lanzamiento en Tiempo Récord',
+    description: 'Tu tienda online lista para vender en menos de 15 días, sin comprometer la calidad.',
     icon: RocketLaunchIcon,
   },
-]
+];
 
 export default function PWeb() {
   return (
@@ -36,14 +36,14 @@ export default function PWeb() {
           <div className="lg:pt-4 lg:pr-8 animate-fadeInLeft">
             <div className="lg:max-w-lg">
               <h2 className="text-base/7 font-semibold text-[#00D2FF] animate-fadeInUp delay-200 tracking-wide uppercase">
-                Desarrollo Web Profesional
+                Tiendas Online que Transforman Negocios
               </h2>
               <p className="mt-2 text-4xl font-bold tracking-tight text-pretty text-white sm:text-5xl animate-fadeInUp delay-400 title-glow-blue">
-                Páginas Web que Impulsan tu Negocio
+                E-commerce que Impulsa tus Ventas
               </p>
               <p className="mt-6 text-lg/8 text-[#B5B5B5] animate-fadeInUp delay-600 leading-relaxed">
-                Creamos páginas web modernas, rápidas y optimizadas que convierten visitantes en clientes. 
-                Diseño profesional con tecnologías de vanguardia.
+                Diseñamos y desarrollamos tiendas online completas, optimizadas para vender 24/7. 
+                Con integración de pagos, gestión de inventario y diseño profesional.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-[#B5B5B5] lg:max-w-none">
                 {features.map((feature, index) => (
@@ -78,11 +78,11 @@ export default function PWeb() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 relative">
         <div className="mx-auto max-w-2xl text-center animate-fadeInUp delay-200">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl title-glow-blue mb-4">
-            Nuestro Proceso de Desarrollo
+            Nuestro Proceso para Crear tu Tienda Online
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-[#2A8CFF] to-[#1BC6D9] mx-auto rounded-full mb-6 animate-pulse"></div>
           <p className="mt-6 text-lg leading-8 text-[#B5B5B5]">
-            Un proceso estructurado que garantiza resultados excepcionales
+            Un proceso estructurado que garantiza resultados excepcionales en cada tienda online.
           </p>
         </div>
         
@@ -93,7 +93,7 @@ export default function PWeb() {
               <div className="absolute inset-0 rounded-lg bg-[#2A8CFF]/20 blur-md group-hover:blur-lg transition-all duration-300"></div>
             </div>
             <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#2A8CFF] transition-colors duration-300">Análisis</h3>
-            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Estudiamos tus necesidades, objetivos y audiencia objetivo</p>
+            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Definimos objetivos y funcionalidades clave.</p>
           </div>
           
           <div className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-[#1BC6D9]/10 to-[#8B5CF6]/10 rounded-xl border border-[#1BC6D9]/20 backdrop-blur-sm hover:border-[#1BC6D9]/40 transition-all duration-500 group animate-fadeInUp delay-600 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#1BC6D9]/20">
@@ -102,7 +102,7 @@ export default function PWeb() {
               <div className="absolute inset-0 rounded-lg bg-[#1BC6D9]/20 blur-md group-hover:blur-lg transition-all duration-300"></div>
             </div>
             <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#1BC6D9] transition-colors duration-300">Diseño</h3>
-            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Creamos wireframes y diseños únicos que reflejen tu marca</p>
+            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Creamos un diseño atractivo y funcional.</p>
           </div>
           
           <div className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-[#8B5CF6]/10 to-[#2A8CFF]/10 rounded-xl border border-[#8B5CF6]/20 backdrop-blur-sm hover:border-[#8B5CF6]/40 transition-all duration-500 group animate-fadeInUp delay-800 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#8B5CF6]/20">
@@ -111,7 +111,7 @@ export default function PWeb() {
               <div className="absolute inset-0 rounded-lg bg-[#8B5CF6]/20 blur-md group-hover:blur-lg transition-all duration-300"></div>
             </div>
             <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#8B5CF6] transition-colors duration-300">Desarrollo</h3>
-            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Programamos con tecnologías modernas y mejores prácticas</p>
+            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Implementamos tu tienda con las mejores tecnologías.</p>
           </div>
           
           <div className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-[#00D2FF]/10 to-[#2A8CFF]/10 rounded-xl border border-[#00D2FF]/20 backdrop-blur-sm hover:border-[#00D2FF]/40 transition-all duration-500 group animate-fadeInUp delay-1000 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#00D2FF]/20">
@@ -120,7 +120,7 @@ export default function PWeb() {
               <div className="absolute inset-0 rounded-lg bg-[#00D2FF]/20 blur-md group-hover:blur-lg transition-all duration-300"></div>
             </div>
             <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00D2FF] transition-colors duration-300">Lanzamiento</h3>
-            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Implementamos, probamos y ponemos tu sitio en línea</p>
+            <p className="text-sm text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Tu tienda lista para vender en tiempo récord.</p>
           </div>
         </div>
       </div>
@@ -231,7 +231,7 @@ export default function PWeb() {
             </ul>
           </div>
           
-          <div className="p-8 bg-gradient-to-br from-[#8B5CF6]/10 to-[#00D2FF]/10 rounded-xl border border-[#8B5CF6]/20 backdrop-blur-sm hover:border-[#8B5CF6]/40 transition-all duration-500 group animate-fadeInUp delay-500 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#8B5CF6]/20">
+          <div className="p-8 bg-gradient-to-br from-[#8B5CF6]/10 to-[#2A8CFF]/10 rounded-xl border border-[#8B5CF6]/20 backdrop-blur-sm hover:border-[#8B5CF6]/40 transition-all duration-500 group animate-fadeInUp delay-500 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#8B5CF6]/20">
             <div className="flex items-center mb-4">
               <div className="p-2 bg-[#8B5CF6]/20 rounded-lg mr-3 group-hover:bg-[#8B5CF6]/30 transition-all duration-300">
                 <svg className="w-6 h-6 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -304,7 +304,7 @@ export default function PWeb() {
                 <div className="absolute inset-0 rounded-full bg-[#1BC6D9]/10 blur-lg group-hover:blur-xl transition-all duration-300"></div>
               </div>
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#1BC6D9] transition-colors duration-300">Seguridad</h3>
+            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#1BC6D9] transition-colors duration-300">Ciberseguridad</h3>
             <p className="text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Certificados SSL, protección contra malware y copias de seguridad</p>
           </div>
           
@@ -358,5 +358,5 @@ export default function PWeb() {
         </div>
       </div>
     </div>
-  )
+  );
 }

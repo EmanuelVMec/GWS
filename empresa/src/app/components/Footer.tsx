@@ -203,7 +203,7 @@ export default function Footer() {
                 <li>
                   <a
                     className="text-[#B5B5B5] transition hover:text-[#1BC6D9] duration-300"
-                    href="#"
+                    href="/faq"
                   >
                     Preguntas Frecuentes
                   </a>
