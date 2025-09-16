@@ -44,7 +44,7 @@ export default function AppMovil() {
               </span>
             </h2>
             <p className="text-base text-[#B5B5B5] md:text-lg leading-relaxed">
-              Desarrollamos apps móviles nativas e híbridas para iOS y Android. 
+              Desarrollamos apps móviles nativas para Android. 
               Experiencias de usuario intuitivas, rendimiento optimizado y funcionalidades 
               que impulsan el crecimiento de tu negocio.
             </p>
@@ -93,7 +93,7 @@ export default function AppMovil() {
               </div>
             </div>
             <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#2A8CFF] transition-colors duration-300">Apps Nativas</h3>
-            <p className="text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Desarrollo nativo para iOS y Android con rendimiento óptimo</p>
+            <p className="text-[#B5B5B5] group-hover:text-white transition-colors duration-300">Desarrollo nativo para Android con rendimiento óptimo</p>
           </div>
 
           <div className="text-center p-6 bg-gradient-to-br from-[#1BC6D9]/10 to-[#8B5CF6]/10 rounded-xl border border-[#1BC6D9]/20 backdrop-blur-sm hover:border-[#1BC6D9]/40 transition-all duration-300 group animate-fadeInUp delay-1000">
