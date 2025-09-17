@@ -364,7 +364,10 @@ export default function AppMovil() {
                   </svg>
                 ))}
               </div>
-              <p className="text-[#B5B5B5] mb-6 italic group-hover:text-white transition-colors duration-300">"{testimonial.text}"</p>
+<p className="text-[#B5B5B5] mb-6 italic group-hover:text-white transition-colors duration-300">
+  &ldquo;{testimonial.text}&rdquo;
+</p>
+
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-[#2A8CFF] to-[#1BC6D9] rounded-full flex items-center justify-center mr-4">
                   {testimonial.avatar}
